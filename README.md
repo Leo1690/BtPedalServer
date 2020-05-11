@@ -1,6 +1,6 @@
 # BtPedalServer
 
-In the current pandemic we need to stay home. Therefore, the purpose of this app is to motivate people to do indoors sports while they play video-games.
+In the current pandemic we need to stay at home. Therefore, the purpose of this app is to motivate people to do indoors sports while they play video-games.
 
 Smart sensor for static bicycles for video-games
 It transforms your Android smartphone into a motion sensor.
