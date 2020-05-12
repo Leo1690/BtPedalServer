@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     BluetoothSocket mmSocket;
     BluetoothDevice mmDevice = null;
     UUID uuid = UUID.fromString("94f39d29-7d6d-437d-973b-fba39e49d4ee"); //Standard SerialPortService ID
-
+    Button meassureButton;
     String sendData;
     boolean mBusy = false;
     float scale = 8;
@@ -44,6 +44,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 mmOutputStream.write(msg.getBytes());
             } catch (IOException e) {
                 e.printStackTrace();
+                stopMeassure();
+                closeSocket();
+                mBusy=false;
+                meassureButton.setText("Start");
             }
         }
     }
@@ -96,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (!mBluetoothAdapter.isEnabled()) {
             mBluetoothAdapter.enable();
         }
-        final Button meassureButton = (Button) findViewById(R.id.meassureButton);
+        meassureButton = (Button) findViewById(R.id.meassureButton);
         final EditText scaleEditText = (EditText) findViewById(R.id.scaleEditText);
         meassureButton.setOnClickListener(new View.OnClickListener() {
             @Override
